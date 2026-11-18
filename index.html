@@ -1,280 +1,99 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adana City Guide</title>
-
-   <link rel="stylesheet" href="test/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adana'daki tarihi ve doğal güzellikleri keşfet.">
+    <title>Adana Gezi Rehberi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-
-    <!-- Üst Menü -->
     <header class="navbar">
-
-        <a href="#" class="logo">adana<span>.</span></a>
-
-        <nav>
-            <a href="#kesfet">Keşfet</a>
-            <a href="#yerler">Gezilecek Yerler</a>
-            <a href="#lezzetler">Adana Lezzetleri</a>
+        <a href="index.html" class="logo">adana<span>.</span></a>
+        <nav class="main-nav" aria-label="Ana menü">
+            <a href="index.html">Gezilecek Yerler</a>
+            <a href="details.html">Mekan Detayları</a>
+            <a href="suggest.html">Mekan Öner</a>
+            <a href="fees-hours.html">Ücretler ve Saatler</a>
         </nav>
-
-        <a href="#kesfet" class="nav-button">Geziye Başla</a>
-
+        <a class="nav-button" href="#yerler">Geziye Başla</a>
     </header>
 
-
-    <!-- Ana Karşılama Alanı -->
     <main>
-
         <section class="hero" id="kesfet">
-
             <div class="hero-content">
-
                 <p class="subtitle">AKDENİZ'İN SICAK ŞEHRİ</p>
-
                 <h1>Adana'yı<br>yeniden keşfet.</h1>
-
                 <p class="description">
-                    Tarihin, lezzetin ve eşsiz güzelliklerin
-                    buluştuğu şehre hoş geldin.
+                    Tarihi yapıları, nehir kıyılarını ve şehrin doğal güzelliklerini keşfet.
                 </p>
-
-                <a href="#yerler" class="hero-button">
-                    Şehri Keşfet →
-                </a>
-
+                <a href="#yerler" class="hero-button">Şehri Keşfet →</a>
             </div>
-
         </section>
 
-<!-- Adana'yı Tanı Bölümü -->
-
-<!-- Adana'yı Tanı Bölümü -->
-<section class="intro" id="tanitim">
-
-    <div class="intro-heading">
-
-        <div class="intro-title">
-            <p class="intro-eyebrow">ŞEHRİN KARAKTERİNİ KEŞFET</p>
-            <h2>Adana'da seni<br><span>neler bekliyor?</span></h2>
-        </div>
-
-        <p class="intro-description">
-            Tarihin izlerini taşıyan sokaklar, Akdeniz'in
-            sıcak atmosferi ve damaklarda iz bırakan
-            lezzetler... Adana'da keşfedilecek çok şey var.
-        </p>
-
-    </div>
-
-    <div class="feature-grid">
-
-        <a href="#yerler" class="feature-card" data-number="01">
-
-            <div class="feature-top">
-                <span class="feature-number">01</span>
-                <span class="feature-label">GEÇMİŞTEN BUGÜNE</span>
-            </div>
-
-            <h3>Tarihin İzinde</h3>
-
-            <p>
-                Taşköprü, Büyük Saat ve Adana'nın
-                tarihi dokusunu keşfet.
-            </p>
-
-            <span class="feature-more">YAKINDAN KEŞFET ↗</span>
-
-        </a>
-
-
-        <a href="#yerler" class="feature-card" data-number="02">
-
-            <div class="feature-top">
-                <span class="feature-number">02</span>
-                <span class="feature-label">ŞEHRİN MANZARASI</span>
-            </div>
-
-            <h3>Şehrin Güzellikleri</h3>
-
-            <p>
-                Seyhan Nehri, Merkez Park ve
-                şehrin eşsiz manzaralarıyla tanış.
-            </p>
-
-            <span class="feature-more">YAKINDAN KEŞFET ↗</span>
-
-        </a>
-
-
-        <a href="#lezzetler" class="feature-card" data-number="03">
-
-            <div class="feature-top">
-                <span class="feature-number">03</span>
-                <span class="feature-label">ADANA MUTFAĞI</span>
-            </div>
-
-            <h3>Yerel Lezzetler</h3>
-
-            <p>
-                Adana kebabı, şalgam ve
-                yöresel tatlarla lezzetli bir yolculuğa çık.
-            </p>
-
-            <span class="feature-more">YAKINDAN KEŞFET ↗</span>
-
-        </a>
-
-    </div>
-
-</section>
-
-<!-- Gezilecek Yerler -->
-<section class="places" id="yerler">
-<div class="intro-heading">
-
-    <div class="intro-title">
-        <p class="intro-eyebrow">ŞEHRİN TARİHİNİ KEŞFET</p>
-
-        <h2>
-            Adana'nın izinde<br>
-            <span>bir yolculuk.</span>
-        </h2>
-    </div>
-
-    <p class="intro-description">
-        Geçmişin izlerini taşıyan tarihi yapılar,
-        Seyhan'ın kıyısında uzanan eşsiz manzaralar
-        ve şehrin kendine özgü mimarisi...
-        Adana, her köşesinde keşfedilmeyi bekleyen
-        bir hikâye saklıyor.
-    </p>
-
-</div>
-
-
-        <!-- Sabancı Merkez Camii -->
-        <div class="place-card">
-            <img src="https://www.tursab.org.tr/assets/img/fotograf-galerisi/detay/akdeniz/adanamerkez/sabanci_camii_35_7861796.jpg"
-                 alt="Sabancı Merkez Camii">
-
-            <div class="place-info">
-                <span>MİMARİ</span>
-                <h3>Sabancı Merkez Camii</h3>
-                <p>
-                    Klasik Osmanlı mimarisinden izler taşıyan
-                    cami, şehrin en dikkat çekici yapılarındandır.
-                </p>
-            </div>
-        </div>
-
-        <!-- Büyük Saat -->
-        <div class="place-card">
-            <img src="https://www.albawaba.com/sites/default/files/im_new/noor.ahmad/%D8%A8%D8%B1%D8%AC%20%D8%A7%D9%84%D8%B3%D8%A7%D8%B9%D8%A9%20%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1.jpg"
-                 alt="Adana Büyük Saat">
-
-            <div class="place-info">
-                <span>TARİHİ MİRAS</span>
-                <h3>Büyük Saat</h3>
-                <p>
-                    1881 yılında yapımına başlanan tarihi kule,
-                    Adana'nın geçmişini yansıtan önemli eserlerdendir.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Adana Lezzetleri -->
-<section class="foods" id="lezzetler">
-
-    <div class="food-heading">
-        <div>
-            <p class="food-subtitle">ADANA MUTFAĞINDAN</p>
-            <h2>Bir şehrin tadı,<br>mutfağında saklı.</h2>
-        </div>
-
-        <p>
-            Adana'nın kendine özgü mutfağını keşfet.
-            Geleneksel tarifler ve unutulmaz yerel tatlar
-            bu şehirde seni bekliyor.
-        </p>
-    </div>
-
-    <div class="food-grid">
-
-        <!-- Adana Kebabı -->
-        <article class="food-card">
-
-            <div class="food-image">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=900" alt="Adana Kebabı">   alt="Adana kebabı">
-            </div>
-
-            <div class="food-info">
-                <span>01 / ŞEHRİN İMZASI</span>
-                <h3>Adana Kebabı</h3>
-                <p>
-                    Özel baharatlarla hazırlanan ve közde
-                    pişirilen Adana'nın dünyaca tanınan lezzeti.
+        <section class="intro" id="tanitim">
+            <div class="intro-heading">
+                <div class="intro-title">
+                    <p class="intro-eyebrow">ŞEHRİN KARAKTERİNİ KEŞFET</p>
+                    <h2>Adana'da seni<br><span>neler bekliyor?</span></h2>
+                </div>
+                <p class="intro-description">
+                    Tarihi sokaklar, Seyhan Nehri ve şehrin kendine özgü mimarisi.
+                    Adana'da keşfedilecek pek çok güzel yer var.
                 </p>
             </div>
 
-        </article>
+            <div class="feature-grid">
+                <a href="#tarihi-yapilar" class="feature-card" data-number="01">
+                    <span class="feature-label">GEÇMİŞTEN BUGÜNE</span>
+                    <h3>Tarihi Yapılar</h3>
+                    <p>Taşköprü ve Büyük Saat gibi şehrin tarihini anlatan yerleri gör.</p>
+                    <span class="feature-more">YAKINDAN KEŞFET ↗</span>
+                </a>
 
-        <!-- Bici Bici -->
-        <article class="food-card">
+                <a href="#nehir-ve-parklar" class="feature-card" data-number="02">
+                    <span class="feature-label">ŞEHRİN MANZARASI</span>
+                    <h3>Nehir ve Parklar</h3>
+                    <p>Seyhan Nehri kıyısında yürüyüş yap, Merkez Park'ta dinlen.</p>
+                    <span class="feature-more">YAKINDAN KEŞFET ↗</span>
+                </a>
 
-            <div class="food-image">
-                <img src="https://media.cumhuriyet.com.tr/Archive/2024/4/25/2199891/kapak_122857.jpg"
-                     alt="Adana bici bici tatlısı">
+                <a href="#muzeler-ve-camiler" class="feature-card" data-number="03">
+                    <span class="feature-label">KÜLTÜR VE MİMARİ</span>
+                    <h3>Müzeler ve Camiler</h3>
+                    <p>Adana'nın mimarisini ve geçmişini yansıtan durakları keşfet.</p>
+                    <span class="feature-more">YAKINDAN KEŞFET ↗</span>
+                </a>
             </div>
+        </section>
 
-            <div class="food-info">
-                <span>02 / SERİN BİR LEZZET</span>
-                <h3>Bici Bici</h3>
-                <p>
-                    Rendelenmiş buz, nişasta peltesi
-                    ve gül şurubuyla hazırlanan yöresel tatlı.
+        <section class="places" id="yerler">
+            <div class="intro-heading">
+                <div class="intro-title">
+                    <p class="intro-eyebrow">GEZİLECEK YERLER</p>
+                    <h2>Adana'nın izinde<br><span>bir yolculuk.</span></h2>
+                </div>
+                <p class="intro-description">
+                    Tarihi yapılar, müzeler ve nehir kıyısındaki doğal alanlar.
+                    Her mekan kartından o yerin fotoğraflarına, açıklamasına ve ziyaret bilgilerine ulaşabilirsin.
                 </p>
             </div>
 
-        </article>
+            <div id="place-groups"></div>
 
-        <!-- Şalgam -->
-        <article class="food-card">
-
-            <div class="food-image">
-                <img src="https://cdnuploads.aa.com.tr/uploads/userFiles/e1e8523d-4106-45e0-98bd-20afb1e8805a/2026/mart/AA-40819348.jpg"
-                     alt="Adana şalgam suyu">
-            </div>
-
-            <div class="food-info">
-                <span>03 / GELENEKSEL İÇECEK</span>
-                <h3>Adana Şalgamı</h3>
-                <p>
-                    Kendine özgü ekşimsi tadıyla
-                    Adana mutfağının vazgeçilmez içeceği.
-                </p>
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
+            <section class="place-group" id="oneriler" aria-labelledby="oneriler-baslik">
+                <h3 id="oneriler-baslik">Önerilen Mekanlar</h3>
+                <p class="table-note" id="suggestions-empty">Bu tarayıcıda henüz öneri kayıtlı değil.</p>
+                <div class="places-grid" id="suggested-places"></div>
+                <a class="detail-link" href="suggest.html">Mekan öner →</a>
+            </section>
+        </section>
     </main>
 
-
-    <!-- Alt Bilgi -->
-    <footer>
-
+    <footer class="site-footer">
+        <a href="index.html" class="logo">adana<span>.</span></a>
+        <p>Adana Gezi Rehberi · Öğrenci Projesi</p>
     </footer>
-
 </body>
 </html>
