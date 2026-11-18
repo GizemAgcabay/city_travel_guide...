@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adana'daki gezilecek yerlerin ücretlerini ve ziyaret saatlerini karşılaştır.">
+    <title>Ücretler ve Saatler | Adana Gezi Rehberi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">adana<span>.</span></a>
+        <nav class="main-nav" aria-label="Ana menü">
+            <a href="index.html">Gezilecek Yerler</a>
+            <a href="details.html">Mekan Detayları</a>
+            <a href="suggest.html">Mekan Öner</a>
+            <a href="fees-hours.html" aria-current="page">Ücretler ve Saatler</a>
+        </nav>
+    </header>
 
+    <main>
+        <section class="page-banner guide-banner">
+            <div class="guide-copy">
+                <p class="subtitle">YOLA ÇIKMADAN ÖNCE</p>
+                <h1>Adana gezin için doğru zamanı seç.</h1>
+                <p class="guide-description">
+                    Müzeyi rotana eklemeden önce kapalı günü ve gişe saatini kontrol et.
+                    Ardından nehir kıyısında yürüyüş veya tarihi çarşıda bir mola için zaman ayır.
+                </p>
+                <a class="text-button" href="#ziyaret-tablosu">Ücretleri ve saatleri gör ↓</a>
+            </div>
+
+            <aside class="guide-panel">
+                <h2>Gezi planında üç ayrıntı</h2>
+                <ul>
+                    <li><strong>Müze.</strong> Gişe, müzenin kapanış saatinden önce kapanabilir.</li>
+                    <li><strong>Camiler.</strong> Ziyaret saatlerinde ibadet düzenini göz önünde bulundur.</li>
+                    <li><strong>Açık alanlar.</strong> Bakım veya etkinlik varsa park ve kıyı erişimi değişebilir.</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="table-section" id="ziyaret-tablosu">
+            <div class="intro-heading">
+                <div class="intro-title">
+                    <p class="intro-eyebrow">ZİYARET REHBERİ</p>
+                    <h2>Giriş ücretleri ve saatler</h2>
+                </div>
+                <p class="intro-description">
+                    Tablodan giriş ücretlerini ve kapalı günleri karşılaştırabilirsin.
+                    Fotoğraf, konum ve ulaşım bilgisi için mekanın adına tıkla.
+                </p>
+            </div>
+
+            <div class="guide-dates">
+                <p>Bilgilerin derlendiği tarih <time datetime="2026-11-17">17 Kasım 2026</time>.</p>
+                <p id="today-line" hidden>Bugünün tarihi <span id="today-date"></span>.</p>
+            </div>
+
+            <div class="table-scroll" role="region" aria-label="Ücret ve ziyaret saatleri tablosu" tabindex="0">
+                <table class="visit-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Mekan</th>
+                            <th scope="col">Tam ücret</th>
+                            <th scope="col">Öğrenci ücreti</th>
+                            <th scope="col">Ücretsiz giriş</th>
+                            <th scope="col">Ziyaret günleri</th>
+                            <th scope="col">Ziyaret saatleri</th>
+                            <th scope="col">Kapalı gün</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><a href="details.html#taskopru">Taşköprü</a></th>
+                            <td>Ücretsiz (kamusal köprü)</td><td>Ücretsiz</td><td>Evet</td>
+                            <td>Her gün</td><td>Açık alan, gün boyu</td><td>Yok*</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a href="details.html#sabanci">Sabancı Merkez Camii</a></th>
+                            <td>Ücretsiz</td><td>Ücretsiz</td><td>Evet</td>
+                            <td>Her gün</td><td>05.00–22.00**</td><td>Yok**</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a href="details.html#buyuksaat">Büyük Saat</a></th>
+                            <td>Ücretsiz (dış alan)</td><td>Ücretsiz</td><td>Evet</td>
+                            <td>Her gün</td><td>Açık alan, gün boyu</td><td>Yok*</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a href="details.html#museum">Adana Arkeoloji Müzesi</a></th>
+                            <td>T.C. vatandaşları için MüzeKart, yabancı ziyaretçiler için €5</td>
+                            <td>Ayrı öğrenci ücreti yayımlanmamış</td><td>MüzeKart kabul edilir</td>
+                            <td>Salı–Pazar</td><td>08.30–17.30 (gişe 17.00)</td><td>Pazartesi</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a href="details.html#park">Merkez Park</a></th>
+                            <td>Ücretsiz</td><td>Ücretsiz</td><td>Evet</td>
+                            <td>Her gün</td><td>Açık park, gün boyu</td><td>Yok*</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a href="details.html#ulu">Ulu Cami Külliyesi</a></th>
+                            <td>Ücretsiz</td><td>Ücretsiz</td><td>Evet</td>
+                            <td>Her gün</td><td>İbadet saatlerine bağlı</td><td>Yok**</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a href="details.html#seyhan-nehri">Seyhan Nehri Kıyısı</a></th>
+                            <td>Ücretsiz (açık kıyı alanı)</td><td>Ücretsiz</td><td>Evet</td>
+                            <td>Her gün</td><td>Açık alan, gün boyu</td><td>Yok*</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="visit-extras">
+                <section class="table-footnote">
+                    <h3>Ziyaret notları</h3>
+                    <ul>
+                        <li><strong>*</strong> Taşköprü, Büyük Saat'in dış alanı, Merkez Park ve Seyhan Nehri kıyısı açık kamusal alanlardır. Bakım veya etkinlik nedeniyle erişim kısıtlanabilir.</li>
+                        <li><strong>**</strong> Camilerde namaz saatleri ve ibadet düzeni ziyaret saatlerini etkileyebilir.</li>
+                    </ul>
+                </section>
+
+                <section class="table-sources">
+                    <h3>Resmî kaynaklar</h3>
+                    <p>Yola çıkmadan önce güncel ücretleri ve saatleri aşağıdaki bağlantılardan kontrol edebilirsin.</p>
+                    <ol>
+                        <li><a href="https://muze.gov.tr/muze-detay?DistId=MRK&amp;SectionId=AAR01">Adana Müzesi ziyaret bilgileri</a></li>
+                        <li><a href="https://www.muze.gov.tr/document/bakanlik_yonergesi_tr.pdf">Kültür ve Turizm Bakanlığı müze ücretleri</a></li>
+                        <li><a href="https://okuldisiogrenme.eba.gov.tr/mekan-detay/adana-sabanci-merkez-camii-1845">Sabancı Merkez Camii ziyaret bilgileri</a></li>
+                        <li><a href="https://rota.adana.bel.tr/planla">Rota Adana şehir rotaları</a></li>
+                    </ol>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html" class="logo">adana<span>.</span></a>
+        <p>Adana Gezi Rehberi · Öğrenci Projesi</p>
+    </footer>
+</body>
+</html>
