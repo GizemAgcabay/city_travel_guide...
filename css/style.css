@@ -1,1 +1,410 @@
+/* Renkler ve temel yazı düzeni */
+:root {
+    --cream: #f8f5ef;
+    --sand: #f1ebe1;
+    --brown: #49382e;
+    --muted: #6e6057;
+    --accent: #a24e35;
+    --border: #dfd0c3;
+}
 
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--brown);
+    font: 16px/1.65 Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    margin: 0 0 .65rem;
+    font-family: Georgia, serif;
+    line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.55rem, 6vw, 4.3rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.9rem); }
+h3 { font-size: 1.5rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); }
+
+/* Üst ve alt menü */
+.navbar, .site-footer { padding: 1.35rem 8%; }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .9rem 1.6rem;
+}
+
+.logo {
+    color: inherit;
+    font: bold 2rem Georgia, serif;
+    text-decoration: none;
+}
+
+.logo span { color: #c9785b; }
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.7rem;
+}
+
+.main-nav a {
+    color: inherit;
+    font-size: .9rem;
+    text-decoration: none;
+}
+
+.main-nav a:hover, .main-nav a[aria-current="page"] { color: var(--accent); }
+.main-nav a[aria-current="page"] { font-weight: bold; }
+.site-footer p { margin: .5rem 0 0; }
+
+.nav-button, .hero-button, .text-button {
+    display: inline-block;
+    padding: .65rem 1.1rem;
+    border: 0;
+    border-radius: .35rem;
+    background: var(--accent);
+    color: white;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-button:hover, .hero-button:hover, .text-button:hover {
+    background: #783c2b;
+}
+
+/* Ana sayfa karşılama görseli ve tanıtım */
+.hero, .intro, .places, .page-banner, .detail-content,
+.form-layout, .table-section {
+    padding: clamp(2.5rem, 7vw, 6.75rem) 8%;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 36rem;
+    margin: 0 3%;
+    border-radius: .75rem;
+    background: linear-gradient(90deg, #1a1411e8, #25181135),
+        #49382e url("https://www.tatilana.com/wp-content/uploads/2016/03/adana-giris-gorsel-2.jpg") center/cover;
+    color: white;
+}
+
+.hero-content { max-width: 38rem; }
+.hero h1, .page-banner h1 { font-weight: normal; }
+.description, .intro-description { max-width: 28rem; }
+.hero .description { margin-bottom: 1.7rem; }
+
+.subtitle, .intro-eyebrow, .eyebrow, .feature-label {
+    font-size: .76rem;
+    font-weight: bold;
+    letter-spacing: .12em;
+}
+
+.subtitle { color: #f6c7ad; }
+.subtitle, .intro-eyebrow { margin-bottom: .9rem; }
+.intro-eyebrow, .intro-title h2 span { color: var(--accent); }
+.intro, .places, .form-layout { background: var(--sand); }
+
+.intro-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.intro-title h2 { font-weight: normal; }
+.intro-description { color: var(--muted); }
+
+/* Keşif kutuları ve mekan kartları */
+.feature-grid, .places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 1.25rem;
+}
+
+.feature-card, .place-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+    color: var(--brown);
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 16.5rem;
+    padding: 1.5rem;
+    background: #dfc9b3;
+}
+
+.feature-card:nth-child(2) {
+    background: #795542;
+    color: white;
+}
+
+.feature-card:nth-child(3) { background: #e0b3a2; }
+
+.feature-card::after {
+    content: attr(data-number);
+    position: absolute;
+    top: 1rem;
+    right: .8rem;
+    color: currentColor;
+    opacity: .1;
+    font: 5.5rem Georgia, serif;
+    pointer-events: none;
+}
+
+.feature-card h3 { margin: 1.7rem 0 .55rem; }
+.feature-more, .card-label { font-size: .82rem; font-weight: bold; }
+.feature-more { margin-top: auto; padding-top: .6rem; }
+
+.feature-card:hover, .place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .8rem 1.6rem #49382e24;
+}
+
+.place-group {
+    margin-top: 2.4rem;
+    scroll-margin-top: 1rem;
+}
+
+.place-group > h2, .place-group > h3 { margin-bottom: 1rem; }
+.place-card { display: block; background: #fffdf9; }
+
+.place-card img {
+    display: block;
+    width: 100%;
+    height: clamp(13rem, 25vw, 19rem);
+    object-fit: cover;
+}
+
+.place-info, .info-box, .suggestion-form {
+    padding: 1.4rem;
+    overflow-wrap: anywhere;
+}
+
+.place-info p { color: var(--muted); }
+.place-info .eyebrow, .card-label { color: var(--accent); }
+.place-info .eyebrow { margin-bottom: .4rem; }
+
+/* Sayfa başlıkları ve mekan detayları */
+.site-footer, .page-banner, .detail-hero {
+    background: var(--brown);
+    color: white;
+}
+
+.page-banner p:last-child {
+    max-width: 38rem;
+    color: #f2ded1;
+}
+
+.detail-hero {
+    position: relative;
+    display: grid;
+    align-items: end;
+    min-height: clamp(21rem, 48vw, 34rem);
+    padding: 2rem 8%;
+    isolation: isolate;
+}
+
+.detail-hero img, .detail-hero::after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.detail-hero img { object-fit: cover; }
+
+.detail-hero::after {
+    content: "";
+    background: linear-gradient(0deg, #23150ef2, transparent 85%);
+}
+
+.detail-content, .form-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 2rem;
+    overflow-wrap: anywhere;
+}
+
+.form-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+
+.info-box {
+    align-self: start;
+    background: var(--sand);
+}
+
+.info-box, .suggestion-form {
+    border: 1px solid var(--border);
+    border-radius: .65rem;
+}
+
+.detail-content ul, .table-footnote ul, .table-sources ol { padding-left: 1.4rem; }
+.detail-link { display: inline-block; margin-top: .65rem; }
+.info-box .detail-link { display: block; }
+
+/* Mekan Öner ve Ücretler sayfalarının üst bölümü */
+.guide-banner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.75rem, 5vw, 5rem);
+    background: linear-gradient(125deg, #392a23, #6a4536);
+}
+
+.guide-copy h1 { font-size: clamp(2.4rem, 5.5vw, 4.25rem); }
+
+.guide-description {
+    max-width: 33rem;
+    margin-bottom: 1.5rem;
+    color: #f2ded1;
+}
+
+.guide-copy .text-button {
+    background: #f2d7c6;
+    color: var(--brown);
+    font-weight: bold;
+}
+
+.guide-copy .text-button:hover { background: #fff2e7; }
+
+.guide-panel, .guide-note, .guide-dates {
+    padding: clamp(1rem, 2.5vw, 1.75rem);
+    border-radius: .75rem;
+    background: #fff7ee;
+    color: var(--brown);
+}
+
+.guide-panel {
+    border-top: 4px solid #c9785b;
+    box-shadow: 0 .75rem 1.8rem #21130d33;
+}
+
+.guide-panel h2, .suggestion-form h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.guide-panel ol, .guide-panel ul {
+    margin: 1rem 0 0;
+    padding-left: 1.4rem;
+}
+
+.guide-panel li + li { margin-top: .7rem; }
+
+.guide-panel li::marker {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.guide-intro { max-width: 32rem; }
+
+.guide-note {
+    margin: 1.25rem 0;
+    border-left: 4px solid #c9785b;
+}
+
+.guide-note p, .guide-dates p { margin: 0; }
+
+#suggestion-form, #ziyaret-tablosu { scroll-margin-top: 1rem; }
+
+/* Öneri formu */
+.suggestion-form { background: white; }
+.suggestion-form h2 { margin-bottom: 1.25rem; }
+.suggestion-form label { display: block; font-weight: bold; }
+
+.suggestion-form input, .suggestion-form select, .suggestion-form textarea {
+    width: 100%;
+    margin: .3rem 0 1rem;
+    padding: .65rem;
+    border: 1px solid var(--border);
+    border-radius: .3rem;
+    font: inherit;
+    color: inherit;
+}
+
+.suggestion-form textarea { min-height: 7rem; resize: vertical; }
+.form-message { margin-top: 1rem; }
+
+/* Ziyaret tablosu, tarih kutusu ve kaynaklar */
+.table-note { color: var(--muted); }
+.table-scroll { overflow-x: auto; border-radius: .55rem; }
+
+.guide-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 2rem;
+    margin-bottom: 1.25rem;
+    background: var(--sand);
+}
+
+.visit-extras {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.table-footnote, .table-sources {
+    padding: 1.2rem;
+    background: var(--sand);
+    border-radius: .55rem;
+    overflow-wrap: anywhere;
+}
+
+.visit-extras li + li { margin-top: .45rem; }
+
+.visit-table {
+    width: 100%;
+    min-width: 52rem;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: .9rem;
+    background: white;
+}
+
+.visit-table th, .visit-table td {
+    padding: .7rem;
+    border: 1px solid var(--border);
+}
+
+.visit-table thead { background: var(--brown); color: white; }
+.visit-table tbody tr:nth-child(even) { background: #f7f1e9; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #ab5a36;
+    outline-offset: 3px;
+}
+
+/* Telefon görünümü */
+@media (max-width: 760px) {
+    .detail-content, .form-layout, .guide-banner, .visit-extras {
+        grid-template-columns: 1fr;
+    }
+
+    .hero { min-height: 30rem; }
+    .main-nav { width: 100%; }
+    .nav-button { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-card, .place-card { transition: none; }
+    .feature-card:hover, .place-card:hover { transform: none; }
+}
