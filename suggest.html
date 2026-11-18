@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adana'da keşfedilecek yeni bir mekan öner.">
+    <title>Mekan Öner | Adana Gezi Rehberi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">adana<span>.</span></a>
+        <nav class="main-nav" aria-label="Ana menü">
+            <a href="index.html">Gezilecek Yerler</a>
+            <a href="details.html">Mekan Detayları</a>
+            <a href="suggest.html" aria-current="page">Mekan Öner</a>
+            <a href="fees-hours.html">Ücretler ve Saatler</a>
+        </nav>
+    </header>
 
+    <main>
+        <section class="page-banner guide-banner">
+            <div class="guide-copy">
+                <p class="subtitle">ADANA'YI BİRLİKTE KEŞFEDELİM</p>
+                <h1>Güzel bir yer biliyorsan anlat.</h1>
+                <p class="guide-description">
+                    Seyhan kıyısında sevdiğin bir yürüyüş yolu, gözden kaçan bir tarihi yapı
+                    veya gölgesinde mola verdiğin bir park… Adana'yı kendi rotanla anlat.
+                </p>
+                <a class="text-button" href="#suggestion-form">Öneri formuna git →</a>
+            </div>
+
+            <aside class="guide-panel">
+                <h2>Önerin nasıl eklenir?</h2>
+                <ol>
+                    <li><strong>Mekanı tanıt.</strong> Adını, konumunu ve orada neler görülebileceğini yaz.</li>
+                    <li><strong>Özeti kontrol et.</strong> Gönder düğmesine bastığında onay penceresi açılır.</li>
+                    <li><strong>Listede gör.</strong> Onayladığın öneri, ana sayfadaki Önerilen Mekanlar bölümüne eklenir.</li>
+                </ol>
+            </aside>
+        </section>
+
+        <section class="form-layout">
+            <div class="form-intro guide-intro">
+                <p class="intro-eyebrow">MEKANI ANLAT</p>
+                <h2>Yeni durakları<br>birlikte keşfedelim.</h2>
+                <p>
+                    İlk kez gidecek birine yol tarif eder gibi yaz. Yakındaki bir durak,
+                    sokak adı veya bilinen bir yapı, konumu bulmayı kolaylaştırır.
+                </p>
+
+                <div class="guide-note">
+                    <h3>Açıklamaya örnek</h3>
+                    <p>«Nehir kıyısında kısa bir yürüyüş yapıp köprüyü ve gün batımını aynı noktadan izleyebilirsin.»</p>
+                </div>
+
+                <p class="table-note">Öneriler bu tarayıcıda saklanır. Yıldızlı alanların doldurulması gerekir.</p>
+            </div>
+
+            <form id="suggestion-form" class="suggestion-form">
+                <h2>Mekan bilgileri</h2>
+
+                <label for="place-name">Mekanın adı *</label>
+                <input id="place-name" name="placeName" type="text" required minlength="2" maxlength="100">
+
+                <label for="city">Şehir *</label>
+                <input id="city" name="city" type="text" required minlength="2" maxlength="60">
+
+                <label for="address">Açık adres veya konum *</label>
+                <input id="address" name="address" type="text" required minlength="3" maxlength="250">
+
+                <label for="category">Mekan kategorisi *</label>
+                <select id="category" name="category" required>
+                    <option value="">Kategori seç</option>
+                    <option>Tarihi yer</option>
+                    <option>Doğal güzellik</option>
+                    <option>Müze</option>
+                    <option>Park</option>
+                    <option>Cami</option>
+                    <option>Diğer</option>
+                </select>
+
+                <label for="description">Kısa açıklama *</label>
+                <textarea id="description" name="description" required minlength="10" maxlength="1000"></textarea>
+
+                <label for="image-url">Görsel bağlantısı (isteğe bağlı)</label>
+                <input id="image-url" name="imageUrl" type="url" placeholder="https://" maxlength="1000">
+
+                <label for="sender-name">Öneren kişinin adı *</label>
+                <input id="sender-name" name="senderName" type="text" required minlength="2" maxlength="100">
+
+                <button class="text-button" type="submit">Öneriyi Gönder</button>
+                <p id="form-message" class="form-message" role="status"></p>
+                <a class="detail-link" id="saved-link" href="index.html#oneriler" hidden>Kaydettiğin öneriyi gör →</a>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html" class="logo">adana<span>.</span></a>
+        <p>Adana Gezi Rehberi · Öğrenci Projesi</p>
+    </footer>
+</body>
+</html>
