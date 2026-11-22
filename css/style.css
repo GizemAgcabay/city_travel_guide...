@@ -94,7 +94,7 @@ a { color: var(--accent); }
     margin: 0 3%;
     border-radius: .75rem;
     background: linear-gradient(90deg, #1a1411e8, #25181135),
-        #49382e url("https://www.tatilana.com/wp-content/uploads/2016/03/adana-giris-gorsel-2.jpg") center/cover;
+       #49382e var(--hero-photo, url("https://www.tatilana.com/wp-content/uploads/2016/03/adana-giris-gorsel-2.jpg")) center/cover; 
     color: white;
 }
 
@@ -413,4 +413,41 @@ select:focus-visible, textarea:focus-visible {
 }
 .main-nav a[aria-current="page"] {
     text-decoration: underline;
+}
+.hero {
+    position: relative;
+}
+
+.hero-photo-controls {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.hero-photo-controls button {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hero-photo-controls button::before {
+    content: "";
+    display: block;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: auto;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.hero-photo-controls button[aria-pressed="true"]::before {
+    background: white;
+    transform: scale(1.4);
 }

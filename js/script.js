@@ -221,3 +221,33 @@ if (placeSearch) {
         });
     });
 }
+const hero = document.querySelector(".hero");
+const photoDots = document.querySelectorAll(".hero-photo-controls button");
+
+if (hero && photoDots.length) {
+    const photos = ["", places.buyuksaat.image, places.sabanci.image];
+    let currentPhoto = 0;
+
+    function showPhoto(index) {
+        currentPhoto = index;
+        const photo = photos[index];
+
+        if (photo) {
+            hero.style.setProperty("--hero-photo", `url("${photo}")`);
+        } else {
+            hero.style.removeProperty("--hero-photo");
+        }
+
+        photoDots.forEach((dot, position) => {
+            dot.setAttribute("aria-pressed", String(position === index));
+        });
+    }
+
+    photoDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => showPhoto(index));
+    });
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setInterval(() => showPhoto((currentPhoto + 1) % photos.length), 5000);
+    }
+}
