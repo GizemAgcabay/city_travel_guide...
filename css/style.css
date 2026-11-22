@@ -408,3 +408,6 @@ select:focus-visible, textarea:focus-visible {
     .feature-card, .place-card { transition: none; }
     .feature-card:hover, .place-card:hover { transform: none; }
 }
+.visit-table tbody tr:target > * {
+    background-color: #fff1cf;
+}
