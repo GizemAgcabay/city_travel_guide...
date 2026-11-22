@@ -411,3 +411,6 @@ select:focus-visible, textarea:focus-visible {
 .visit-table tbody tr:target > * {
     background-color: #fff1cf;
 }
+.main-nav a[aria-current="page"] {
+    text-decoration: underline;
+}
