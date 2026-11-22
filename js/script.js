@@ -138,6 +138,7 @@ function addDetail(id, place) {
     article.querySelector(".highlights").hidden = !list.children.length;
     article.querySelector(".transport").hidden = !place.transport;
     article.querySelector(".text-button").hidden = !Object.hasOwn(places, id);
+    article.querySelector(".text-button").href = "fees-hours.html#" + id;
     details.append(article);
 }
 for (const [id, [title, ...ids]] of Object.entries(groups)) {
@@ -208,3 +209,45 @@ if (form) form.onsubmit = (event) => {
     message.textContent = "Önerin bu tarayıcıda kaydedildi.";
     link.hidden = false;
 };
+const placeSearch = document.getElementById("place-search");
+
+if (placeSearch) {
+    placeSearch.addEventListener("input", () => {
+        const query = placeSearch.value.trim().toLocaleLowerCase("tr");
+
+        document.querySelectorAll("#place-groups .place-card").forEach((card) => {
+            const name = card.querySelector("h3").textContent.toLocaleLowerCase("tr");
+            card.style.display = name.includes(query) ? "" : "none";
+        });
+    });
+}
+const hero = document.querySelector(".hero");
+const photoDots = document.querySelectorAll(".hero-photo-controls button");
+
+if (hero && photoDots.length) {
+    const photos = ["", places.buyuksaat.image, places.sabanci.image];
+    let currentPhoto = 0;
+
+    function showPhoto(index) {
+        currentPhoto = index;
+        const photo = photos[index];
+
+        if (photo) {
+            hero.style.setProperty("--hero-photo", `url("${photo}")`);
+        } else {
+            hero.style.removeProperty("--hero-photo");
+        }
+
+        photoDots.forEach((dot, position) => {
+            dot.setAttribute("aria-pressed", String(position === index));
+        });
+    }
+
+    photoDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => showPhoto(index));
+    });
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setInterval(() => showPhoto((currentPhoto + 1) % photos.length), 5000);
+    }
+}

@@ -12,7 +12,7 @@
     <header class="navbar">
         <a href="index.html" class="logo">adana<span>.</span></a>
         <nav class="main-nav" aria-label="Ana menü">
-            <a href="index.html">Gezilecek Yerler</a>
+            <a href="index.html" aria-current="page">Gezilecek Yerler</a>
             <a href="details.html">Mekan Detayları</a>
             <a href="suggest.html">Mekan Öner</a>
             <a href="fees-hours.html">Ücretler ve Saatler</a>
@@ -29,6 +29,11 @@
                     Tarihi yapıları, nehir kıyılarını ve şehrin doğal güzelliklerini keşfet.
                 </p>
                 <a href="#yerler" class="hero-button">Şehri Keşfet →</a>
+                <div class="hero-photo-controls">
+    <button type="button" aria-label="Adana manzarası" aria-pressed="true"></button>
+<button type="button" aria-label="Büyük Saat" aria-pressed="false"></button>
+<button type="button" aria-label="Sabancı Merkez Camii" aria-pressed="false"></button>
+</div>
             </div>
         </section>
 
@@ -79,7 +84,8 @@
                     Her mekan kartından o yerin fotoğraflarına, açıklamasına ve ziyaret bilgilerine ulaşabilirsin.
                 </p>
             </div>
-
+<label for="place-search">Mekân adıyla ara</label>
+<input id="place-search" type="search" placeholder="Örn. Taşköprü">
             <div id="place-groups"></div>
 
             <section class="place-group" id="oneriler" aria-labelledby="oneriler-baslik">
