@@ -138,6 +138,7 @@ function addDetail(id, place) {
     article.querySelector(".highlights").hidden = !list.children.length;
     article.querySelector(".transport").hidden = !place.transport;
     article.querySelector(".text-button").hidden = !Object.hasOwn(places, id);
+    article.querySelector(".text-button").href = "fees-hours.html#" + id;
     details.append(article);
 }
 for (const [id, [title, ...ids]] of Object.entries(groups)) {
