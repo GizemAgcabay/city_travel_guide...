@@ -209,3 +209,15 @@ if (form) form.onsubmit = (event) => {
     message.textContent = "Önerin bu tarayıcıda kaydedildi.";
     link.hidden = false;
 };
+const placeSearch = document.getElementById("place-search");
+
+if (placeSearch) {
+    placeSearch.addEventListener("input", () => {
+        const query = placeSearch.value.trim().toLocaleLowerCase("tr");
+
+        document.querySelectorAll("#place-groups .place-card").forEach((card) => {
+            const name = card.querySelector("h3").textContent.toLocaleLowerCase("tr");
+            card.style.display = name.includes(query) ? "" : "none";
+        });
+    });
+}
